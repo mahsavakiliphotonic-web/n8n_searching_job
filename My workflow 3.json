@@ -1,0 +1,309 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1056,
+        -368
+      ],
+      "id": "1a331446-6fac-4b2c-bae2-1cea5bc3eea3",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/7G7RKCuH9VZBw7bD.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -912,
+        -368
+      ],
+      "id": "f44201b3-f00e-4b8f-a145-8af5f6cd3686",
+      "name": "jobly"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/ymP81BCRNQeI29AN.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -560,
+        -368
+      ],
+      "id": "dcdf049b-268b-45bb-a19a-3e7bdf304352",
+      "name": "barona2"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/4MplxAW4bOvJyjSr.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        -368
+      ],
+      "id": "91be17f4-ce1d-4e61-b342-c8a39b825c8b",
+      "name": "atalent1"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/fGotwKc1IrBEV982.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        112,
+        -368
+      ],
+      "id": "046bb98a-98cf-4306-964f-9dd5b13e2b4e",
+      "name": "job market finland1"
+    },
+    {
+      "parameters": {
+        "url": "https://rss.app/feeds/Bojor8kZPYaqQf5y.xml",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        448,
+        -368
+      ],
+      "id": "91190b80-bbba-419e-a2af-72505112e418",
+      "name": "academic work1"
+    },
+    {
+      "parameters": {
+        "sendTo":  "example@gmail.com",
+        "subject": "Job Alert: New Opportunities",
+        "message": "={{$json[\"emailBody\"]}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        -368
+      ],
+      "id": "a7c54560-f7c7-4e51-b8eb-e614a7499348",
+      "name": "Send a message",
+      "webhookId": "cc0e1788-5ca2-42b6-84b7-d898a6535efa",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "PfQtLVqFHSBJA6u1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const oldItems = $getWorkflowStaticData('global');\n\nif (!oldItems.allJobs) {\n  oldItems.allJobs = [];\n}\n\n// آیتم‌های جدید را اضافه کن\n$items().forEach(item => {\n  oldItems.allJobs.push(item.json);\n});\n\nreturn $items();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -736,
+        -368
+      ],
+      "id": "24b2bc99-9bae-4550-af09-775404c95ff6",
+      "name": "Function"
+    },
+    {
+      "parameters": {
+        "jsCode": "const oldItems = $getWorkflowStaticData('global');\n\nif (!oldItems.allJobs) {\n  oldItems.allJobs = [];\n}\n\n// آیتم‌های جدید را اضافه کن\n$items().forEach(item => {\n  oldItems.allJobs.push(item.json);\n});\n\nreturn $items();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -416,
+        -368
+      ],
+      "id": "c9f1afc2-c2c7-428c-a4e2-2ab7c50a4e3b",
+      "name": "Function1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const oldItems = $getWorkflowStaticData('global');\n\nif (!oldItems.allJobs) {\n  oldItems.allJobs = [];\n}\n\n// آیتم‌های جدید را اضافه کن\n$items().forEach(item => {\n  oldItems.allJobs.push(item.json);\n});\n\nreturn $items();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        -368
+      ],
+      "id": "39a555ff-dcc2-4e27-9ce8-13c6f0400b51",
+      "name": "Function2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const oldItems = $getWorkflowStaticData('global');\n\nif (!oldItems.allJobs) {\n  oldItems.allJobs = [];\n}\n\n// آیتم‌های جدید را اضافه کن\n$items().forEach(item => {\n  oldItems.allJobs.push(item.json);\n});\n\nreturn $items();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        272,
+        -368
+      ],
+      "id": "fa6a7bc5-1e62-4d91-9f32-d5bf4cc80660",
+      "name": "Function3"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $getWorkflowStaticData('global');\n\nlet emailText = \"سلام،\\n\\nچند فرصت شغلی جدید برای شما پیدا شد:\\n\\n\";\n\n(data.allJobs || []).forEach(item => {\n  const title = item.title || item.job_title || \"بدون عنوان\";\n  const link = item.link || item.url || \"بدون لینک\";\n  const source = item.creator || \"Website\";\n\n  emailText += `- ${title}\\n${link}\\n(${source})\\n\\n`;\n});\n\nemailText += \"با احترام،\\nJob Alert Bot\";\n\n// پاک کردن برای اجرای بعدی\ndata.allJobs = [];\n\nreturn [{ json: { emailBody: emailText } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        -368
+      ],
+      "id": "3031a43c-f5ad-4944-8713-543efcb96559",
+      "name": "Function4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Function": {
+      "main": [
+        [
+          {
+            "node": "barona2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "jobly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "jobly": {
+      "main": [
+        [
+          {
+            "node": "Function",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "barona2": {
+      "main": [
+        [
+          {
+            "node": "Function1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function1": {
+      "main": [
+        [
+          {
+            "node": "atalent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atalent1": {
+      "main": [
+        [
+          {
+            "node": "Function2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function2": {
+      "main": [
+        [
+          {
+            "node": "job market finland1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "job market finland1": {
+      "main": [
+        [
+          {
+            "node": "Function3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function3": {
+      "main": [
+        [
+          {
+            "node": "academic work1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "academic work1": {
+      "main": [
+        [
+          {
+            "node": "Function4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function4": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "8cb88ba2-1211-48cb-a505-7ce3578bac2e",
+  "meta": {
+    "instanceId": "d4e76766d0c9fe20deb2d4b601225c590b221c5d0751456dd21071b436636bb0"
+  },
+  "id": "6nDbkj4ZGmNblk6Y",
+  "tags": []
+}
